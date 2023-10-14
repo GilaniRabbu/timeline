@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #474C93;
+    font-family: "League Spartan", sans-serif;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 15px;
+}
+
+.timeline {
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 6px;
+    margin-left: -3px;
+    background-color: #FFF;
+}
+
+.container {
+    width: 50%;
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -17px;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: #FFF;
+    border: 5px solid #E5BF15;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before {
+    content: " ";
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border: medium solid #FFF;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #FFF;
+}
+
+.right::before {
+    content: " ";
+    position: absolute;
+    top: 22px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border: medium solid #FFF;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #FFF transparent transparent;
+}
+
+.right::after {
+    left: -18px;
+}
+
+.content {
+    padding: 20px 30px;
+    position: relative;
+    border-radius: 6px;
+    background-color: #FFF;
+}
+
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .container::before {
+        left: 60px;
+        border: medium solid #FFF;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #FFF transparent transparent;
+    }
+
+    .left::after,
+    .right::after {
+        left: 14px;
+    }
+
+    .right {
+        left: 0%;
+    }
+}
